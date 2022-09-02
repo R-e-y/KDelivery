@@ -1,0 +1,33 @@
+{% if messages %}
+    {% for message in messages %}
+    <script language="JavaScript">
+       setTimeout(() => {
+  const box = document.getElementById('msg');
+
+  // 👇️ removes element from DOM
+  box.style.display = 'none';
+
+  // 👇️ hides element (still takes up space on page)
+  // box.style.visibility = 'hidden';
+}, 2000);
+        </script>
+    <div class="alert {{ message.tags }}" id="msg" role="alert" style="margin-top:20px;margin-left: 30px;">
+        {{message}}
+    </div>
+    {% endfor %}
+{% endif %}
+
+<!-- {% block scripts %}
+<script>
+   
+    setTimeout(function(){
+        alert ($msg.lenght);
+        if ($('#msg').lenght > 0) {
+           alert ("`yyeee");
+        }
+    }, 2000)
+
+ 
+</script>
+
+{% endblock %} -->
